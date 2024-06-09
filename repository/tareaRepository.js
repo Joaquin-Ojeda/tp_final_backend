@@ -17,3 +17,12 @@ exports.getTareaByIdRepo = async (id)=>{
         console.log(error);
     }
 };
+
+exports.postTareaRepo = async(tarea) => {
+    try {
+        let newTarea = new Tareas(tarea);
+        await newTarea.save();
+    } catch (error) {
+        console.log(error)
+    }
+}

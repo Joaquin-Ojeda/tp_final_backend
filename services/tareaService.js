@@ -7,3 +7,11 @@ exports.getTareas = ()=>{
 exports.getTareaById = (id)=>{
     return tareaRepository.getTareaByIdRepo(id);
 }
+
+exports.postTarea = async(tarea) => {
+    try {
+        return tareaRepository.postTareaRepo(tarea);
+    } catch (error) {
+        console.log(error);
+    }
+}

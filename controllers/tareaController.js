@@ -25,3 +25,13 @@ exports.readTareaById = async (req, res)=>{
         res.status(500).send("Error al encontrar tarea.");
     }
 };
+
+exports.createTarea = async(req, res) => {
+    try {
+        const tarea = await tareaService.postTarea(req.body)
+        res.status(200).send(tarea);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Hubo un error al crear la tarea.")
+    }
+}
