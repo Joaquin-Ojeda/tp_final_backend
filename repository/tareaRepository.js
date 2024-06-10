@@ -18,6 +18,15 @@ exports.getTareaByIdRepo = async (id)=>{
     }
 };
 
+exports.postTareaRepo = async(tarea) => {
+    try {
+        let newTarea = new Tareas(tarea);
+        await newTarea.save();
+    } catch (error) {
+        console.log(error)
+    }
+};
+
 exports.updateTarea = async (id, tarea)=>{
     try{
         let identifier = {_id: id};
@@ -33,4 +42,4 @@ exports.updateTarea = async (id, tarea)=>{
     }catch(error){
         console.log(error);
     }
-}
+};
