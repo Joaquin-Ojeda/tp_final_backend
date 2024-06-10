@@ -33,5 +33,21 @@ exports.createTarea = async(req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).send("Hubo un error al crear la tarea.")
+
     }
-}
+};
+
+exports.updateTarea = async (req, res)=>{
+    try{
+        const tarea = await tareaService.updateTarea(req.params.id, req.body);
+        if(tarea){
+            res.status(200).send(req.body);
+        }else{
+            res.status(404).send("Error al actualizar tarea con id: "+req.params.id)
+        }
+        
+    }catch(error){
+        console.log(error)
+        res.status(500).send("Error al actualizar tarea.");    
+    }
+};
