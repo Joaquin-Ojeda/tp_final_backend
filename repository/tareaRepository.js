@@ -17,3 +17,20 @@ exports.getTareaByIdRepo = async (id)=>{
         console.log(error);
     }
 };
+
+exports.updateTarea = async (id, tarea)=>{
+    try{
+        let identifier = {_id: id};
+        let body = {    
+            titulo: tarea.titulo,
+            descripcion: tarea.descripcion,
+            asignado: tarea.asignado,
+            fecha_fin: tarea.fecha_fin,
+            estado: tarea.estado
+        };
+        let tareaNueva = await Tareas.updateOne(identifier, body, {new: true});
+        return tareaNueva;
+    }catch(error){
+        console.log(error);
+    }
+}
