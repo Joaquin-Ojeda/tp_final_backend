@@ -8,6 +8,10 @@ exports.getTareaById = (id)=>{
     return tareaRepository.getTareaByIdRepo(id);
 };
 
+exports.deleteTareaByIdServ = (id) => {
+    return tareaRepository.deleteTareaByIdRepo(id);
+};
+
 exports.postTarea = async(tarea) => {
     try {
         return tareaRepository.postTareaRepo(tarea);

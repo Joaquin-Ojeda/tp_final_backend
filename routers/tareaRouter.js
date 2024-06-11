@@ -11,4 +11,25 @@ tareaRouter.get('/:id', tareaController.readTareaById);
 tareaRouter.post('/', tareaController.createTarea);
 tareaRouter.put('/:id', tareaController.updateTarea);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tareaRouter.delete('/:id',tareaController.deleteTareaById);
+
+
+
+
+
 module.exports = tareaRouter;

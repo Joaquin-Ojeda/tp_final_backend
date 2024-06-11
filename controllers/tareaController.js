@@ -26,6 +26,22 @@ exports.readTareaById = async (req, res)=>{
     }
 };
 
+exports.deleteTareaById = async (req, res) => {
+    try {
+       let borrar = await tareaService.deleteTareaByIdServ(req.params.id);
+
+       if(borrar){
+        return res.status(200).json("La tarea se eliminó con éxito");
+       }else{
+        return res.status(400).json(`Controller: Tarea n°: ${req.params.id} no existe`);
+       }
+       
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(`Controller: Error al eliminar la tarea id: ${req.params.id}`);
+    }
+};
+
 exports.createTarea = async(req, res) => {
     try {
         const tarea = await tareaService.postTarea(req.body)

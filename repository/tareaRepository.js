@@ -18,6 +18,22 @@ exports.getTareaByIdRepo = async (id)=>{
     }
 };
 
+exports.deleteTareaByIdRepo = async (id) => {
+    try{
+        let tarea = await Tareas.findById(id);
+        
+        if(!tarea){
+            return console.log(`Repository: No existe el id: ${id}`)
+        }else{
+            console.log(`Repository: Se eliminó la tarea con id: ${id}`)
+            return await Tareas.findByIdAndDelete({_id:id})
+        }
+        
+    }catch(error){
+        return console.log(error);
+    }
+};
+
 exports.postTareaRepo = async(tarea) => {
     try {
         let newTarea = new Tareas(tarea);
