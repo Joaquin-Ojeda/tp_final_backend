@@ -8,7 +8,8 @@ tareaRouter.use(express.json());
 
 tareaRouter.get('/', tareaController.readTareas);
 tareaRouter.get('/:id', tareaController.readTareaById);
-
+tareaRouter.post('/', tareaController.createTarea);
+tareaRouter.put('/:id', tareaController.updateTarea);
 
 
 
