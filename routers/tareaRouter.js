@@ -10,4 +10,25 @@ tareaRouter.get('/', tareaController.readTareas);
 tareaRouter.get('/:id', tareaController.readTareaById);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tareaRouter.delete('/:id',tareaController.deleteTareaById);
+
+
+
+
+
 module.exports = tareaRouter;
