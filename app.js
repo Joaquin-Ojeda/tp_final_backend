@@ -11,13 +11,15 @@ conectarDB();
 
 //Middleware
 app.use(cors());
-
+ 
 
 app.use('/api/tareas', tareaRouter);
 
 app.get('/', (req,res)=>{
     res.send('Servidor CRUD Tareas - 200 ok!');
 })
+
+
 
 app.listen(PORT, ()=>{
     console.log(`El servidor esta escuchando en el puerto ${PORT}`);
