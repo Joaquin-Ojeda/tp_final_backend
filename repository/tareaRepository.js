@@ -1,4 +1,8 @@
 const Tareas = require('./Tareas');
+const conectarDB = require('../db/db');
+
+//conexion a la DB
+conectarDB();
 
 exports.getTareasRepo = async ()=>{
     try{
